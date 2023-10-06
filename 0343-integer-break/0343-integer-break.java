@@ -9,7 +9,6 @@ class Solution {
             max = 2;
         }
         
-        
         if(n > 3) {
             if (n % 3 == 0) {
                 max = (int) Math.pow(2, 0) * (int) Math.pow(3, n/3);
