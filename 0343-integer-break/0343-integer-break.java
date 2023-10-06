@@ -19,8 +19,6 @@ class Solution {
                 max = (int) Math.pow(2, 1) * (int) Math.pow(3, n/3); 
             }
         }
- 
         return max;
-        
     }
 }
