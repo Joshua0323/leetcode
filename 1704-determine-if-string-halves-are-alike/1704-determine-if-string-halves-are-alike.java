@@ -1,31 +1,25 @@
-class Solution {
+public class Solution {
     public boolean halvesAreAlike(String s) {
-        char[] arr = new char[] {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'};
-        int len = s.length()/2;
-        int count = 0;
-        boolean res = false;
-        
-        String str1 = s.substring(0, len);
-        String str2 = s.substring(len, s.length());
+        Set<Character> vowels = new HashSet<>();
+        vowels.add('a'); vowels.add('e'); vowels.add('i'); vowels.add('o'); vowels.add('u');
+        vowels.add('A'); vowels.add('E'); vowels.add('I'); vowels.add('O'); vowels.add('U');
 
-        for (char c : arr) 
-        {
-            for(int i = 0; i < str1.length(); i++) {            
-            if (c == str1.charAt(i)) {
+        int length = s.length();
+        int midPoint = length / 2;
+
+        String firstHalf = s.substring(0, midPoint);
+        String secondHalf = s.substring(midPoint);
+
+        return countVowels(firstHalf, vowels) == countVowels(secondHalf, vowels);
+    }
+
+    private int countVowels(String str, Set<Character> vowels) {
+        int count = 0;
+        for (char c : str.toCharArray()) {
+            if (vowels.contains(c)) {
                 count++;
             }
-            
-            if (c == str2.charAt(i)) {
-                count--;
-            }
         }
-        }
-        
-                
-        if(count == 0) {
-            res = true;
-        }
-                
-        return res;
+        return count;
     }
 }
