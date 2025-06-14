@@ -6,13 +6,14 @@ class Solution(object):
         :rtype: int
         """
         nums.sort()
+        n=len(nums)
         low=0
-        high=nums[len(nums)-1]-nums[0]
+        high=nums[n-1]-nums[0]
         while low<high:
             i=1
             count=0
             diff=low+(high-low)/2
-            while i<len(nums):
+            while i<n:
                 if nums[i]-nums[i-1]<=diff:
                     count+=1
                     i+=1
