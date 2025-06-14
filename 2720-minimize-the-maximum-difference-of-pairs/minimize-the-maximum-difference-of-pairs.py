@@ -7,19 +7,18 @@ class Solution(object):
         """
         nums.sort()
         low = 0
-        high = nums[len(nums)-1] - nums[0]
+        high = int(1e9)
         while low < high:
             i = 1
             count = 0
-            curr = low + (high - low)/2
-            print(curr)
+            diff = low + (high - low)/2
             while i < len(nums):
-                if nums[i] - nums[i - 1] <= curr:
+                if nums[i] - nums[i - 1] <= diff:
                     count += 1
                     i += 1
                 i += 1
             if count >= p:
-                high = curr
+                high = diff
             else:
-                low = curr + 1
+                low = diff + 1
         return low
