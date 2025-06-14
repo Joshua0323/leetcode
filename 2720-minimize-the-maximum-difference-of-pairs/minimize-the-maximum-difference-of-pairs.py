@@ -11,7 +11,7 @@ class Solution(object):
         while low < high:
             i = 1
             count = 0
-            curr = low + (high - low)//2
+            curr = low + (high - low)/2
             print(curr)
             while i < len(nums):
                 if nums[i] - nums[i - 1] <= curr:
