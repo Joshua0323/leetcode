@@ -8,7 +8,7 @@ class Solution(object):
         nums.sort()
         n=len(nums)
         low=0
-        high=nums[n-1]-nums[0]
+        high=nums[-1]-nums[0]
         while low<high:
             i=1
             count=0
